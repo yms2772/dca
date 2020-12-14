@@ -477,6 +477,7 @@ func (e *EncodeSession) handleStderrLine(line string) {
 
 	_, err := fmt.Sscanf(line, "size=%dkB time=%d:%d:%f bitrate=%fkbits/s speed=%fx", &size, &timeH, &timeM, &timeS, &bitrate, &speed)
 	if err != nil {
+		fmt.Println(line)
 		logln("Error parsing ffmpeg stats:", err)
 	}
 
